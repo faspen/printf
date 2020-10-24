@@ -19,6 +19,25 @@ int get_op(char *format, va_list valist)
 }
 
 /**
+ * get_int_func -  prints characters accorind to format info c
+ * @c: format info passed to function
+ * @arg: int to translate then print
+ * Return: number of characters printed
+ */
+
+int get_int_func(char *c, int arg)
+{
+	switch (*c)
+	{
+	case 'c':
+		return (putchar(arg));
+	case ('d' || 'i'):
+		return (print_d_i(arg));
+	}
+}
+
+
+/**
  * get_cp_func - string case
  *
  * @c: location in format
