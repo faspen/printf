@@ -32,7 +32,9 @@ int _printf(const char *format, ...)
 	{
 		if (format[j] == '%')
 		{
-			r = get_func(format[i + 1], valist);
+			j++;
+			r = get_func(format[j], valist);
+			
 			if (r >= 0)
 			{
 				number += r;
@@ -41,7 +43,6 @@ int _printf(const char *format, ...)
 		else
 		{
 			number += _putchar(format[i]);
-			continue;
 		}
 	}
 	va_end(valist);
