@@ -7,7 +7,7 @@
  * Return: number of characters printed
  */
 
-int get_int_func(char *c, int arg)
+int get_int_func(const char *c, int arg)
 {
 	switch (*c)
 	{
