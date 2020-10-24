@@ -21,9 +21,9 @@ int _printf(const char *format, ...)
 	int r, number;
 	va_list valist;
 	char *str;
-	
-	*str = *format;
 
+	str = malloc(sizeof(format) + 1);
+	*str = *format;
 	va_start(valist, format);
 
 	if (str == NULL)
