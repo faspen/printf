@@ -9,7 +9,7 @@
 
 int _printf(const char *format, ...)
 {
-	unsigned int i;
+	unsigned int j;
 	va_list valist;
 
 	va_start(valist, format);
