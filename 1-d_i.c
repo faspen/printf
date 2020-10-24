@@ -23,6 +23,6 @@ int print_d_i(int num)
 	}
 	if (num > 9)
 		count = print_d_i(num / 10);
-	_putchar(num % 10);
+	_putchar((num % 10) + '0');
 	return(count++);
 }
