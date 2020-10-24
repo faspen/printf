@@ -1,4 +1,4 @@
-#include "holberton.h"
+B#include "holberton.h"
 
 /**
   * _putchar - write character
@@ -37,6 +37,8 @@ int _printf(const char *format, ...)
 			r = get_int_func((format + j), va_arg(valist, int);
 			case 's':
 			r = get_cp_func((format + j), va_arg(valist, char*);
+			case '%':
+					r = _putchar('%');
 			default :
 			{
 				r = 1;
