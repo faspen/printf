@@ -31,17 +31,22 @@ int _printf(const char *format, ...)
 		if (format[j] == '%')
 		{
 			j++;
-			r = get_op(format[j], valist);
-
-			if (r >= 0)
+			switch(format[j])
 			{
-				number += r;
+			case ('c' || 'd' || 'i'):
+			r = get_int_func((format + j), va_arg(valist, int);
+			case 's':
+			r = get_cp_func((format + j), va_arg(valist, char*);
+			default :
+			{
+				r = 1;
+				_putchar(format[j]);
 			}
+			}
+			number += r;
 		}
 		else
-		{
-			number += _putchar(format[i]);
-		}
+			number += _putchar(format[j]);
 	}
 	va_end(valist);
 	return (number);
