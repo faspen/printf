@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 	va_list valist;
 	char *str;
 	
-	str = format;
+	*str = *format;
 
 	va_start(valist, format);
 
