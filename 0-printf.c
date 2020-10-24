@@ -24,7 +24,7 @@ int _printf(const char *format, ...)
 	
 	str = format;
 
-	va_start(valist, str);
+	va_start(valist, format);
 
 	if (str == NULL)
 		return (0);
