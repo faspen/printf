@@ -16,6 +16,7 @@ int get_int_func(const char *c, int arg)
 	case ('d' || 'i'):
 		return (print_d_i(arg));
 	}
+	return (0);
 }
 
 
@@ -27,7 +28,8 @@ int get_int_func(const char *c, int arg)
  *
  * Return: count
  */
-int get_cp_func(char *c, char *arg)
+
+int get_cp_func(const char *c, char *arg)
 {
 	int i = 0;
 
@@ -42,6 +44,5 @@ int get_cp_func(char *c, char *arg)
 		}
 		return (i);
 	}
-	}
-	return (NULL);
+	return (0);
 }
