@@ -34,9 +34,9 @@ int _printf(const char *format, ...)
 			switch (format[j])
 			{
 			case ('c' || 'd' || 'i'):
-			r = get_int_func((format + j), va_arg(valist, int);
+			r = get_int_func((format + j), va_arg(valist, int));
 			case 's':
-			r = get_cp_func((format + j), va_arg(valist, char*);
+			r = get_cp_func((format + j), va_arg(valist, char*));
 			case '%':
 					r = _putchar('%');
 			default:
