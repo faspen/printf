@@ -31,7 +31,7 @@ int _printf(const char *format, ...)
 		if (format[j] == '%')
 		{
 			j++;
-			switch(format[j])
+			switch (format[j])
 			{
 			case ('c' || 'd' || 'i'):
 			r = get_int_func((format + j), va_arg(valist, int);
@@ -39,7 +39,7 @@ int _printf(const char *format, ...)
 			r = get_cp_func((format + j), va_arg(valist, char*);
 			case '%':
 					r = _putchar('%');
-			default :
+			default:
 			{
 				r = 1;
 				_putchar(format[j]);
