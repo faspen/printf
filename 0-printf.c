@@ -31,7 +31,7 @@ int _printf(const char *format, ...)
 		if (format[j] == '%')
 		{
 			j++;
-			r = get_func(format[j], valist);
+			r = get_op(format[j], valist);
 
 			if (r >= 0)
 			{
