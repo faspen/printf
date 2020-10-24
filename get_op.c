@@ -17,3 +17,30 @@ int get_op(char *format, va_list valist)
 		{"i", _print_int}
 	};
 }
+
+/**
+  * get_cp_func - string case
+  *
+  * @c: location in format
+  * @arg: va_arg in printf.c
+  *
+  * Return: count
+  */
+int get_cp_func(char *c, char *arg)
+{
+	int i = 0;
+
+	switch (*c)
+	{
+		case 's':
+		{
+			while (arg[i] != '\0')
+			{
+				_putchar(arg[i]);
+				i++;
+			}
+			return (i);
+		}
+	}
+	return (NULL);
+}
