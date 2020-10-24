@@ -34,7 +34,7 @@ int _printf(const char *format, ...)
 		{
 			j++;
 			r = get_func(format[j], valist);
-			
+
 			if (r >= 0)
 			{
 				number += r;
