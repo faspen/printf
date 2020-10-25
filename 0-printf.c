@@ -28,11 +28,7 @@ int _printf(const char *format, ...)
 		if (format[j] == '%')
 		{
 			j++;
-			if (format[j] == 'd')
-			r = get_int_func((format + j), va_arg(valist, int));
-			else if (format[j] == 'c')
-			r = get_int_func((format + j), va_arg(valist, int));
-			else if (format[j] == 'i')
+		if (format[j] == 'd' || format[j] == 'c' || format[j] == 'i')
 			r = get_int_func((format + j), va_arg(valist, int));
 			else if (format[j] == 's')
 			r = get_cp_func((format + j), va_arg(valist, char*));
