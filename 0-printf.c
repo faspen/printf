@@ -18,7 +18,7 @@ int _putchar(char c)
 int _printf(const char *format, ...)
 {
 	unsigned int j;
-	int r, number;
+	int r, number = 0;
 	va_list valist;
 
 	va_start(valist, format);
@@ -29,15 +29,27 @@ int _printf(const char *format, ...)
 		{
 			j++;
 			if (format[j] == 'd')
+			{
 			r = get_int_func((format + j), va_arg(valist, int));
+			printf ("== r = %d ==", r);
+			}
 			else if (format[j] == 'c')
+			{
 			r = get_int_func((format + j), va_arg(valist, int));
+			printf ("== r = %d ==", r);
+			}
 			else if (format[j] == 'i')
+			{
 			r = get_int_func((format + j), va_arg(valist, int));
+			printf ("== r = %d ==", r);
+			}
 			else if (format[j] == 's')
+			{
 			r = get_cp_func((format + j), va_arg(valist, char*));
+			printf ("== r = %d ==", r);
+			}
 			else if (format[j] == '%')
-			r = _putchar('%');
+				r = _putchar('%');
 			else
 			{
 				_putchar('%');
@@ -50,5 +62,6 @@ int _printf(const char *format, ...)
 			number += _putchar(format[j]);
 	}
 	va_end(valist);
+	printf ("\n==number = %d==\n", number);
 	return (number);
 }
