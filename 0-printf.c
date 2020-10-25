@@ -28,24 +28,21 @@ int _printf(const char *format, ...)
 		if (format[j] == '%')
 		{
 			j++;
-			switch (format[j])
-			{
-			case 'd':
-			{
+			if (format[j] == 'd')
 			r = get_int_func((format + j), va_arg(valist, int));
-			break;
-			}
-			case 'c':
+			else if (format[j] == 'c')
 			r = get_int_func((format + j), va_arg(valist, int));
-			case 'i':
-			{
+			else if (format[j] == 'i')
 			r = get_int_func((format + j), va_arg(valist, int));
-			break;
-			}
-			case 's':
+			else if (format[j] == 's')
 			r = get_cp_func((format + j), va_arg(valist, char*));
-			case '%':
+			else if (format[j] == '%')
 			r = _putchar('%');
+			else
+			{
+				_putchar('%');
+				_putchar(format[j]);
+				r = 2;
 			}
 			number += r;
 		}
