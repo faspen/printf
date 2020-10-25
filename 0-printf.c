@@ -20,38 +20,32 @@ int _printf(const char *format, ...)
 	unsigned int j;
 	int r, number;
 	va_list valist;
-	char *str;
 
-	str = malloc(sizeof(format) + 1);
-	*str = *format;
 	va_start(valist, format);
 
-	if (str == NULL)
+	if (format == NULL)
 		return (0);
 
-	for (j = 0; str[j] != '\0'; j++)
+	for (j = 0; format[j] != '\0'; j++)
 	{
-		if (str[j] == '%')
+		if (format[j] == '%')
 		{
 			j++;
-			switch (str[j])
+			switch (format[j])
 			{
 			case ('c' || 'd' || 'i'):
-			r = get_int_func((str + j), va_arg(valist, int));
+			r = get_int_func((format + j), va_arg(valist, int));
 			case 's':
-			r = get_cp_func((str + j), va_arg(valist, char*));
+			r = get_cp_func((format + j), va_arg(valist, char*));
 			case '%':
 					r = _putchar('%');
 			default:
-			{
-				r = 1;
-				_putchar(str[j]);
-			}
+				r = _putchar(format[j]);
 			}
 			number += r;
 		}
 		else
-			number += _putchar(str[j]);
+			number += _putchar(format[j]);
 	}
 	va_end(valist);
 	return (number);
