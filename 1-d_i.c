@@ -14,16 +14,20 @@ int print_d_i(int num)
 	{
 		_putchar('-');
 		_putchar('2');
-		num -= 2000000000;
+		num += 2000000000;
 		num *= -1;
+		count += 2;
 	}
 	if (num < 0)
 	{
 		_putchar('-');
 		num *= -1;
+		count += 1;
 	}
 	if (num > 9)
-		count = print_d_i(num / 10);
-	_putchar((num % 10) + '0');
-	return (count++);
+	{
+		count += print_d_i(num / 10);
+	}
+	count += _putchar((num % 10) + '0');
+	return (count);
 }

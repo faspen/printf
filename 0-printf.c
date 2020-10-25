@@ -18,29 +18,31 @@ int _putchar(char c)
 int _printf(const char *format, ...)
 {
 	unsigned int j;
-	int r, number;
+	int r, number = 0;
 	va_list valist;
 
 	va_start(valist, format);
-
-	if (format == NULL)
-		return (0);
 
 	for (j = 0; format[j] != '\0'; j++)
 	{
 		if (format[j] == '%')
 		{
 			j++;
-			switch (format[j])
-			{
-			case ('c' || 'd' || 'i'):
+			if (format[j] == 'd')
 			r = get_int_func((format + j), va_arg(valist, int));
-			case 's':
+			else if (format[j] == 'c')
+			r = get_int_func((format + j), va_arg(valist, int));
+			else if (format[j] == 'i')
+			r = get_int_func((format + j), va_arg(valist, int));
+			else if (format[j] == 's')
 			r = get_cp_func((format + j), va_arg(valist, char*));
-			case '%':
-					r = _putchar('%');
-			default:
-				r = _putchar(format[j]);
+			else if (format[j] == '%')
+				r = _putchar('%');
+			else
+			{
+				_putchar('%');
+				_putchar(format[j]);
+				r = 2;
 			}
 			number += r;
 		}

@@ -12,8 +12,10 @@ int get_int_func(const char *c, int arg)
 	switch (*c)
 	{
 	case 'c':
-		return (putchar(arg));
-	case ('d' || 'i'):
+		return (_putchar(arg));
+	case 'd':
+		return (print_d_i(arg));
+	case 'i':
 		return (print_d_i(arg));
 	}
 	return (0);
