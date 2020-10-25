@@ -23,9 +23,6 @@ int _printf(const char *format, ...)
 
 	va_start(valist, format);
 
-	if (format == NULL)
-		return (0);
-
 	for (j = 0; format[j] != '\0'; j++)
 	{
 		if (format[j] == '%')
@@ -33,14 +30,22 @@ int _printf(const char *format, ...)
 			j++;
 			switch (format[j])
 			{
-			case ('c' || 'd' || 'i'):
+			case 'd':
+			{
 			r = get_int_func((format + j), va_arg(valist, int));
+			break;
+			}
+			case 'c':
+			r = get_int_func((format + j), va_arg(valist, int));
+			case 'i':
+			{
+			r = get_int_func((format + j), va_arg(valist, int));
+			break;
+			}
 			case 's':
 			r = get_cp_func((format + j), va_arg(valist, char*));
 			case '%':
-					r = _putchar('%');
-			default:
-				r = _putchar(format[j]);
+			r = _putchar('%');
 			}
 			number += r;
 		}

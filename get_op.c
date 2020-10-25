@@ -13,8 +13,16 @@ int get_int_func(const char *c, int arg)
 	{
 	case 'c':
 		return (putchar(arg));
-	case ('d' || 'i'):
+	case 'd':
+	{
+		printf("== arg is %d ==", arg);
 		return (print_d_i(arg));
+	}
+	case 'i':
+	{
+		printf("== arg is %d ==", arg);
+		return (print_d_i(arg));
+	}
 	}
 	return (0);
 }
