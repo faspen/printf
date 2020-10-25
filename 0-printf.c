@@ -18,7 +18,7 @@ int _putchar(char c)
 int _printf(const char *format, ...)
 {
 	unsigned int j;
-	int r, number = 0;
+	int r, ctest, number = 0;
 	va_list valist;
 
 	va_start(valist, format);
@@ -31,7 +31,10 @@ int _printf(const char *format, ...)
 			if (format[j] == 'd')
 			r = get_int_func((format + j), va_arg(valist, int));
 			else if (format[j] == 'c')
-			r = get_int_func((format + j), va_arg(valist, int));
+			{
+			ctest = va_arg(valist, int);
+			r = ctest == 0 ? 0 : get_int_func((format + j), ctest);
+			}
 			else if (format[j] == 'i')
 			r = get_int_func((format + j), va_arg(valist, int));
 			else if (format[j] == 's')
