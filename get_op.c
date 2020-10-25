@@ -12,17 +12,11 @@ int get_int_func(const char *c, int arg)
 	switch (*c)
 	{
 	case 'c':
-		return (putchar(arg));
+		return (_putchar(arg));
 	case 'd':
-	{
-		printf("== arg is %d ==", arg);
 		return (print_d_i(arg));
-	}
 	case 'i':
-	{
-		printf("== arg is %d ==", arg);
 		return (print_d_i(arg));
-	}
 	}
 	return (0);
 }
