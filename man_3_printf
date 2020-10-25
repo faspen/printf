@@ -1,0 +1,17 @@
+.TH _PRINTF
+.SH NAME
+printf \- print something to standard output
+.SH SYNOPSIS
+_printf(STRING + ARGUMENT)
+.SH DESCRIPTION
+_printf will print something on the standard output. Using one of the options below in the string will allow you to pass variables through it if the argument is added after the string.
+.SH OPTIONS
+.B %d - print integer
+.B %i - print integer
+.B %c - print character
+.B %s - print string
+.B %% - print the percent symbol
+.SH BUGS
+No known bugs.
+.SH AUTHOR
+Ben Dosch and Finn Aspenson
