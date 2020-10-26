@@ -10,9 +10,10 @@ int (*get_type(char test))(const char *c, va_list)
 {
 	int i;
 	print_t operators[] = {
-		{'c', print_int_func} , {'d', print_int_func} ,
+		{'c', print_int_func}, {'d', print_int_func},
 		{'i', print_int_func}, {'s', print_cp_func},
-		{'%', print_percent} , {0, NULL}
+		{'r', print_cp_func},
+		{'%', print_percent}, {0, NULL}
 	};
 
 	for (i = 0; operators[i].format != 0; i++)
@@ -30,7 +31,7 @@ int (*get_type(char test))(const char *c, va_list)
  * Return: number of characters printed
  */
 
-int print_int_func(const char *c , va_list valist)
+int print_int_func(const char *c, va_list valist)
 {
 	int arg = va_arg(valist, int);
 
@@ -106,5 +107,5 @@ int print_percent(const char *c, va_list valist __attribute__((unused)))
 {
 	if (*c == '%')
 		return (_putchar('%'));
-	return(0);
+	return (0);
 }
