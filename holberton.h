@@ -7,9 +7,9 @@
 #include <stdio.h>
 
 /**
- * print_type - characters and corespoind function pointers
+ * struct print_type - characters and corespoind function pointers
  * @format: format character
- * @chose_print: chooses function to print with
+ * @choose_print: chooses function to print with
  * Description - matches formating characters with function that use apprpriate
  * data types to print.
  */
