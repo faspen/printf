@@ -18,8 +18,9 @@ int _putchar(char c)
 int _printf(const char *format, ...)
 {
 	unsigned int j;
-	int r, number = 0;
+	int number = 0;
 	va_list valist;
+	int (*print)(const char *, va_list);
 
 	if (format == NULL)
 		return (-1);
@@ -30,19 +31,15 @@ int _printf(const char *format, ...)
 		if (format[j] == '%')
 		{
 			j++;
-		if (format[j] == 'd' || format[j] == 'c' || format[j] == 'i')
-			r = get_int_func((format + j), va_arg(valist, int));
-			else if (format[j] == 's')
-			r = get_cp_func((format + j), va_arg(valist, char*));
-			else if (format[j] == '%')
-				r = _putchar('%');
-			else
+			print = get_type(format[j]);
+			if (print == NULL)
 			{
 				_putchar('%');
 				_putchar(format[j]);
-				r = 2;
+				number += 2;
 			}
-			number += r;
+			else
+				number += print(format + j, valist);
 		}
 		else
 			number += _putchar(format[j]);
