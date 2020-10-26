@@ -4,11 +4,11 @@ printf \- print something to standard output
 .SH SYNOPSIS
 _printf(STRING + ARGUMENT)
 .SH DESCRIPTION
-_printf will print something on the standard output. Using one of the options below in the string will allow you to pass variables through it if the argument is added after the string.
+The _printf function will print anything to the standard output according to the format. The format is a string that is written in the printf function. The options below can be written into the format string as long as the specifiers match the given variable type.
 .SH OPTIONS
-.B %d - print integer
-.B %i - print integer
-.B %c - print character
+.B %d - print integer (int)
+.B %i - print integer (int)
+.B %c - print character (char)
 .B %s - print string
 .B %% - print the percent symbol
 .SH BUGS
