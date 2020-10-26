@@ -12,6 +12,5 @@ int _putchar(char c);
 int get_op(char *format, va_list valist);
 int get_int_func(const char *c, int arg);
 int get_cp_func(const char *c, char *arg);
-int get_special_char(const char *c);
 
 #endif /* HOLBERTON_H */

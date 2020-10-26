@@ -36,8 +36,6 @@ int _printf(const char *format, ...)
 			r = get_cp_func((format + j), va_arg(valist, char*));
 			else if (format[j] == '%')
 				r = _putchar('%');
-			else if (format[j] == '+' || format[j] == ' ' || format[j] == '#')
-				r = get_special_char(format + j);
 			else
 			{
 				_putchar('%');
