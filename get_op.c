@@ -35,6 +35,17 @@ int get_cp_func(const char *c, char *arg)
 {
 	int i = 0;
 
+	if (arg == NULL)
+	{
+		_putchar('(');
+		_putchar('n');
+		_putchar('u');
+		_putchar('l');
+		_putchar('l');
+		_putchar(')');
+		return (6);
+	}
+
 	switch (*c)
 	{
 	case 's':
