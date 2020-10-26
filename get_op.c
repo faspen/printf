@@ -60,3 +60,22 @@ int get_cp_func(const char *c, char *arg)
 	}
 	return (0);
 }
+
+/**
+  * get_special_char - print +, space, or #
+  * @c: passed format
+  * Return: 0
+  */
+int get_special_char(const char *c)
+{
+	switch (*c)
+	{
+		case '+':
+			return (_putchar('+'));
+		case ' ':
+			return (_putchar(' '));
+		case '#':
+			return (_putchar('#'));
+	}
+	return (0);
+}
