@@ -45,7 +45,6 @@ int get_cp_func(const char *c, char *arg)
 		_putchar(')');
 		return (6);
 	}
-
 	switch (*c)
 	{
 	case 's':
@@ -55,6 +54,16 @@ int get_cp_func(const char *c, char *arg)
 			_putchar(arg[i]);
 			i++;
 		}
+		return (i);
+	}
+	case 'r':
+	{
+		while (arg[i] != '\0')
+		{
+			i++;
+		}
+		for (i--; i >= 0; i--)
+			_putchar(arg[i]);
 		return (i);
 	}
 	}

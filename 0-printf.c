@@ -32,7 +32,7 @@ int _printf(const char *format, ...)
 			j++;
 		if (format[j] == 'd' || format[j] == 'c' || format[j] == 'i')
 			r = get_int_func((format + j), va_arg(valist, int));
-			else if (format[j] == 's')
+			else if (format[j] == 's' || format[j] == 'r')
 			r = get_cp_func((format + j), va_arg(valist, char*));
 			else if (format[j] == '%')
 				r = _putchar('%');
