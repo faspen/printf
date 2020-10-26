@@ -21,6 +21,8 @@ int _printf(const char *format, ...)
 	int r, number = 0;
 	va_list valist;
 
+	if (format == NULL)
+		return (-1);
 	va_start(valist, format);
 
 	for (j = 0; format[j] != '\0'; j++)
