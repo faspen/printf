@@ -18,8 +18,9 @@ int _putchar(char c)
 int _printf(const char *format, ...)
 {
 	unsigned int j;
-	int r, number = 0;
+	int number = 0;
 	va_list valist;
+	int (*print)(va_list);
 
 	if (format == NULL)
 		return (-1);
@@ -30,7 +31,16 @@ int _printf(const char *format, ...)
 		if (format[j] == '%')
 		{
 			j++;
-			r = chose_print(format + j, valist);
+			print = get_type(format[j]);
+			if (print == NULL)
+			{
+				_putchar('%');
+				_putchar(format[j]);
+				number += 2;
+			}
+			else
+				number += print(valist);
+		}
 		else
 			number += _putchar(format[j]);
 	}
