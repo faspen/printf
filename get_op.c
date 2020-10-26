@@ -58,4 +58,5 @@ int get_cp_func(const char *c, char *arg)
 		return (i);
 	}
 	}
+	return (0);
 }
