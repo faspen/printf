@@ -58,13 +58,15 @@ int get_cp_func(const char *c, char *arg)
 	}
 	case 'r':
 	{
+		int len = 0;
+
 		while (arg[i] != '\0')
 		{
 			i++;
 		}
 		for (i--; i >= 0; i--)
-			_putchar(arg[i]);
-		return (i);
+			len += _putchar(arg[i]);
+		return (len);
 	}
 	}
 	return (0);
