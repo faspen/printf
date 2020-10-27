@@ -32,7 +32,9 @@ int _printf(const char *format, ...)
 		{
 			j++;
 			print = get_type(format[j]);
-			if (print == NULL)
+			if (format[j] == '\0')
+				return (-1);
+			else if (print == NULL)
 			{
 				_putchar('%');
 				_putchar(format[j]);
