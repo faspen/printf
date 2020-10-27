@@ -11,6 +11,13 @@ The _printf function will print anything to the standard output according to the
 .B %c - print character (char)
 .B %s - print string
 .B %% - print the percent symbol
+.B %r - print string in reverse
+.B %S - print string and substitute certain ASCII values for their hexadecimal counterparts
+.B %R - print string in rot13
+.B %u - print an unsigned int
+.B %o - print an integer in octal
+.B %b - print an integer in binary
+.B %x and %X - print an integer in lowercase and uppercase hexadecimal respectively
 .SH BUGS
 No known bugs.
 .SH AUTHOR
