@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- *  print_unsigned_int - prints an unsigned in of base passed
+ * print_unsigned_ints - prints an unsigned in of base passed
  * @num: number to print/convert
  * @c: character to check for hex format.
  * @base: the base to use for binary, octal, decimal, or hex
