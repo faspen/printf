@@ -30,6 +30,8 @@ In this projected, we have created the printf function with the use of the stand
 
 1-d_i.c - contains the code that allows the printing of digits and integers
 
+15-rot.c - contains the code that converts a string into rot13
+
 3-print_unsigned_ints.c - contains the code that enables the printing of unsigned ints
 
 get_op.c - this file checks the format character and returns the appropriate function pointer. It also contains the functions for the following specifiers: d, i, c, s, r, S, and %
