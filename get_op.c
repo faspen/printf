@@ -48,7 +48,7 @@ int print_int_func(const char *c, va_list valist)
 }
 
 /**
- * print_cp_func - string case
+ * print_cp_func - print string
  * @c: location in format
  * @valist: valist from printf to get argument
  * Return: count
@@ -80,7 +80,7 @@ int print_cp_func(const char *c, va_list valist)
 		}
 		return (i);
 	}
-	case 'r':
+	case 'r': /* print string in reverse */
 	{
 		int len = 0;
 
