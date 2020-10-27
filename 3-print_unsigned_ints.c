@@ -14,11 +14,11 @@ int print_unsigned_ints(const char *c, unsigned int num, unsigned int base)
 
 	if (num / base > 0)
 	{
-		count += print_d_i((num - (num % base)) / base);
+	count += print_unsigned_ints(c, ((num - (num % base)) / base), base);
 	}
-	if (num % base > 9 || *c == 'X')
+	if (num % base > 9 && *c == 'X')
 		count += _putchar(((num % base) - 10) + 'A');
-	if (num % base > 9 || *c == 'x')
+	if (num % base > 9 && *c == 'x')
 		count += _putchar(((num % base) - 10) + 'a');
 	else
 		count += _putchar((num % base) + '0');
