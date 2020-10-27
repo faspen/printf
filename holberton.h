@@ -31,5 +31,6 @@ int print_u_base(const char *c, va_list valist);
 int print_unsigned_ints(const char *c, unsigned int num, unsigned int base);
 int print_S(const char *c, va_list valist);
 int rot13(const char *f __attribute__((unused)), va_list valist);
+int print_address(const char *c, va_list valist);
 
 #endif /* HOLBERTON_H */

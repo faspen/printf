@@ -17,7 +17,7 @@ int (*get_type(char test))(const char *c, va_list)
 		{'x', print_u_base}, {'X', print_u_base},
 		{'%', print_percent}, {'S', print_S},
 		{'R', rot13}, {'%', print_percent},
-		{0, NULL}
+		{'p', print_address}, {0, NULL}
 	};
 
 	for (i = 0; operators[i].format != 0; i++)
