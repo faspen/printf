@@ -99,7 +99,7 @@ int print_cp_func(const char *c, va_list valist)
   */
 int print_S(const char *c, va_list valist)
 {
-	int i, seek;
+	int i, seek = 0;
 	char *arg = va_arg(valist, char *);
 
 	if (arg == NULL)
