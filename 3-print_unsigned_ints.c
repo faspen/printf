@@ -18,7 +18,7 @@ int print_unsigned_ints(const char *c, unsigned int num, unsigned int base)
 	}
 	if (num % base > 9 && *c == 'X')
 		count += _putchar(((num % base) - 10) + 'A');
-	if (num % base > 9 && *c == 'x')
+	else if (num % base > 9 && *c == 'x')
 		count += _putchar(((num % base) - 10) + 'a');
 	else
 		count += _putchar((num % base) + '0');
