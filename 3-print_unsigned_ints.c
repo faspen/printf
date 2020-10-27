@@ -34,7 +34,7 @@ int print_unsigned_ints(const char *c, unsigned int num, unsigned int base)
 
 int print_u_base(const char *c, va_list valist)
 {
-	num = va_arg(valist, unsigned int);
+	unsigned int num = va_arg(valist, unsigned int);
 
 	if (*c == 'u')
 		return (print_unsigned_ints(c, num, 10));
@@ -44,6 +44,5 @@ int print_u_base(const char *c, va_list valist)
 		return (print_unsigned_ints(c, num, 16));
 	else if (*c == 'b')
 		return (print_unsigned_ints(c, num, 2));
-	else
-		return (0);
+	return (0);
 }
