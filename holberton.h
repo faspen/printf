@@ -29,5 +29,6 @@ int print_cp_func(const char *c, va_list valist);
 int print_percent(const char *c, va_list valist __attribute__((unused)));
 int print_u_base(const char *c, va_list valist);
 int print_unsigned_ints(const char *c, unsigned int num, unsigned int base);
+int print_S(const char *c, va_list valist);
 
 #endif /* HOLBERTON_H */

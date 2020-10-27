@@ -15,7 +15,8 @@ int (*get_type(char test))(const char *c, va_list)
 		{'r', print_cp_func}, {'u', print_u_base},
 		{'b', print_u_base}, {'o', print_u_base},
 		{'x', print_u_base}, {'X', print_u_base},
-		{'%', print_percent}, {0, NULL}
+		{'%', print_percent}, {'S', print_S},
+		{0, NULL}
 	};
 
 	for (i = 0; operators[i].format != 0; i++)
@@ -90,6 +91,48 @@ int print_cp_func(const char *c, va_list valist)
 	return (0);
 }
 
+/**
+  * print_S - print string, exclude certain ASCII values
+  * @c: argument passed
+  * @valist: get argument
+  * Return: string
+  */
+int print_S(const char *c, va_list valist)
+{
+	int i, seek;
+	char *arg = va_arg(valist, char *);
+
+	if (arg == NULL)
+		return (_printf("(null)"));
+	switch (*c)
+	{
+	case 'S':
+	{
+		for (i = 0; arg[i]; i++)
+		{
+			if ((arg[i] > 0 && arg[i] < 32) || arg[i] >= 127)
+			{
+				_putchar('\\');
+				_putchar('x');
+				seek++;
+				if (arg[i] > 0 && arg[i] < 16)
+				{
+					_putchar('0');
+					seek++;
+				}
+				seek += _printf("%X", arg[i]);
+			}
+			else
+			{
+				_putchar(arg[i]);
+				seek++;
+			}
+		}
+		return (seek);
+	}
+	}
+	return (0);
+}
 /**
  * print_percent - prints the % character
  * @c: character to print
