@@ -97,7 +97,7 @@ int print_cp_func(const char *c, va_list valist)
 }
 
 /**
- * print_percent [prints the % character
+ * print_percent - prints the % character
  * @c: character to print
  * @valist: unused valist
  * Return: number of char printed
