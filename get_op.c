@@ -12,7 +12,9 @@ int (*get_type(char test))(const char *c, va_list)
 	print_t operators[] = {
 		{'c', print_int_func}, {'d', print_int_func},
 		{'i', print_int_func}, {'s', print_cp_func},
-		{'r', print_cp_func},
+		{'r', print_cp_func}, {'u', print_u_base},
+		{'b', print_u_base}, {'o', print_u_base},
+		{'x', print_u_base}, {'X', print_u_base},
 		{'%', print_percent}, {0, NULL}
 	};
 
@@ -60,15 +62,7 @@ int print_cp_func(const char *c, va_list valist)
 	char *arg = va_arg(valist, char*);
 
 	if (arg == NULL)
-	{
-		_putchar('(');
-		_putchar('n');
-		_putchar('u');
-		_putchar('l');
-		_putchar('l');
-		_putchar(')');
-		return (6);
-	}
+		return (_printf("%s", "(null)"));
 	switch (*c)
 	{
 	case 's':
