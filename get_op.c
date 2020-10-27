@@ -15,6 +15,7 @@ int (*get_type(char test))(const char *c, va_list)
 		{'r', print_cp_func}, {'u', print_u_base},
 		{'b', print_u_base}, {'o', print_u_base},
 		{'x', print_u_base}, {'X', print_u_base},
+		{'R', rot13},
 		{'%', print_percent}, {0, NULL}
 	};
 
