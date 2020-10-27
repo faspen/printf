@@ -113,6 +113,7 @@ int print_S(const char *c, va_list valist)
 			if ((arg[i] > 0 && arg[i] < 32) || arg[i] >= 127)
 			{
 				_putchar('\\');
+				seek++;
 				_putchar('x');
 				seek++;
 				if (arg[i] > 0 && arg[i] < 16)
