@@ -9,7 +9,7 @@
 
 int rot13(const char *f __attribute__((unused)), va_list valist)
 {
-	char* s = va_arg(valist, char*) ;
+	char* s = va_arg(valist, char*);
 	int i, j, count = 0;
 	char al[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char r13[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
