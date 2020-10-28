@@ -20,6 +20,15 @@ typedef struct print_type
 	int (*choose_print)(const char *, va_list);
 } print_t;
 
+typedef struct core_data
+{
+	const char *format;
+	va_list valist;
+	char *buffer;
+	int b_place;
+	int b_loops;
+} core_d;
+
 int _printf(const char *format, ...);
 int (*get_type(char test))(const char *c, va_list valist);
 int print_d_i(int num);

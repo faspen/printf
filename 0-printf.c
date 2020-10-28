@@ -17,35 +17,41 @@ int _putchar(char c)
   */
 int _printf(const char *format, ...)
 {
-	unsigned int j;
-	int number = 0;
+	unsigned int i, number;
 	va_list valist;
 	int (*print)(const char *, va_list);
+	char *buffer = malloc(sizeof(char) * 1024);
+	core_d core = {format, va_start(valist, format), buffer, 0, 0);
 
 	if (format == NULL)
-		return (-1);
-	va_start(valist, format);
-
-	for (j = 0; format[j] != '\0'; j++)
 	{
-		if (format[j] == '%')
+		free(buffer);
+		return (-1);
+	}
+	for (i = 0; format[i] != '\0'; i++)
+	{
+		if (format[i] == '%')
 		{
-			j++;
-			print = get_type(format[j]);
-			if (format[j] == '\0')
+			i++;
+			print = get_type(format[i]);
+			if (format[i] == '\0')
+			{
+				free(buffer);
 				return (-1);
+			}
 			else if (print == NULL)
 			{
-				_putchar('%');
-				_putchar(format[j]);
-				number += 2;
+				core.buffer[b_place] = ('%');
+				core.buffer[b_place++] = format[i];
 			}
 			else
-				number += print(format + j, valist);
+				print(format + i, core);
 		}
 		else
-			number += _putchar(format[j]);
+			core.buffer[b_place] = format[i];
 	}
 	va_end(valist);
+	number = ((core.bloops * 1024) + core.b_place);
+	free(buffer);
 	return (number);
 }
